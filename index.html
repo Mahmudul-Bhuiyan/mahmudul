@@ -1,4 +1,161 @@
-<!DOCTYPE html>
+<!-- KEEP YOUR EXISTING HEAD + CSS (no change needed) -->
+
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Mahmudul <span>Bhuiyan</span></a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="award.html">Award</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="education.html">Education</a>
+    <a href="award.html">Award</a>
+    <a href="skills.html">Skills</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ================= HOME ================= -->
+<section id="home">
+  <!-- KEEP YOUR EXISTING HERO CONTENT EXACTLY SAME -->
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      
+      <!-- LEFT CARD -->
+      <div class="about-left fade-in">
+        <div class="profile-card">
+          <div class="profile-avatar">MB</div>
+          <div class="profile-name">Mahmudul Bhuiyan</div>
+          <div class="profile-role">Graduate Research Assistant</div>
+
+          <div class="profile-detail">📍 Dinajpur, Bangladesh</div>
+          <div class="profile-detail">✉️ mahmudulb.shihab@gmail.com</div>
+          <div class="profile-detail">🏫 HSTU, Dept. of Chemistry</div>
+
+          <div class="memberships">
+            <div class="membership-badge">🔬 American Chemical Society</div>
+            <div class="membership-badge">⚗️ Royal Society of Chemistry</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT TEXT -->
+      <div class="about-text fade-in">
+        <p>Hello! I'm <strong>Mahmudul Bhuiyan</strong> from Bangladesh, currently a graduate student in Chemistry at HSTU.</p>
+
+        <p>My academic focus includes Bio-organic and Bio-inorganic Chemistry, spectroscopy (UV-Vis, IR, NMR, MS), Nanochemistry, Analytical Chemistry, and Green Chemistry.</p>
+
+        <p>I work on <strong>nanozyme sensing</strong>, food safety, and chemometric analysis, with over two years of research experience.</p>
+
+        <p>I aim to pursue a <strong>Ph.D.</strong> and contribute to scientific research.</p>
+
+        <div class="research-interests">
+          <div class="interest-title">Research Interests</div>
+          <div class="tags">
+            <span class="tag">Nanozyme Sensing</span>
+            <span class="tag">ATR-FTIR</span>
+            <span class="tag">Food Safety</span>
+            <span class="tag">Chemometrics</span>
+            <span class="tag">Analytical Chemistry</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Mahmudul Bhuiyan</div>
+    <div class="footer-copy">© 2025 Mahmudul Bhuiyan · Bangladesh</div>
+  </div>
+</footer>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -192,12 +349,173 @@
     </div>
   </div>
 </section>
- <footer>
+
+
+  
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mahmudul Bhuiyan | About</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root { --navy:#0f2541;--teal:#0e7c7b;--teal-light:#14a3a2;--gold:#c9a84c;--cream:#f8f5ef;--white:#ffffff;--gray:#6b7280;--gray-light:#f1f0ec;--text:#1a1a2e;--border:#e2ddd4; }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,37,65,0.97);backdrop-filter:blur(10px);border-bottom:2px solid var(--teal);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;letter-spacing:0.02em;white-space:nowrap;}
+  .nav-logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:0.2rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.4rem 0.7rem;border-radius:4px;transition:all 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(201,168,76,0.1);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.4rem;background:none;border:none;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--navy);padding:1rem 1.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+  .mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;padding:0.7rem 0;border-bottom:1px solid rgba(255,255,255,0.08);transition:color 0.2s;}
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a:hover{color:var(--gold);}
+  .mobile-menu.open{display:flex;}
+
+  section{padding:6rem 1.5rem 4rem;}
+  .section-inner{max-width:1200px;margin:0 auto;}
+  .section-header{text-align:center;margin-bottom:3.5rem;}
+  .section-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.8rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--navy);line-height:1.2;}
+  .section-line{width:60px;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));margin:1rem auto 0;border-radius:2px;}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:4rem;align-items:start;}
+  .about-left{position:sticky;top:80px;}
+  .profile-card{background:var(--navy);border-radius:16px;padding:2.5rem 2rem;text-align:center;color:var(--white);position:relative;overflow:hidden;}
+  .profile-card::before{content:'';position:absolute;top:-40px;right:-40px;width:150px;height:150px;background:radial-gradient(circle,rgba(14,124,123,0.3),transparent 70%);border-radius:50%;}
+  .profile-avatar{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal-light));display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);border:3px solid rgba(255,255,255,0.2);position:relative;z-index:1;}
+  .profile-name{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:0.3rem;position:relative;z-index:1;}
+  .profile-role{font-size:0.8rem;color:var(--teal-light);font-weight:500;letter-spacing:0.05em;margin-bottom:1.5rem;position:relative;z-index:1;}
+  .profile-detail{display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:rgba(255,255,255,0.65);padding:0.5rem 0;border-top:1px solid rgba(255,255,255,0.08);position:relative;z-index:1;text-align:left;}
+  .profile-detail svg{flex-shrink:0;opacity:0.6;}
+  .memberships{margin-top:1.5rem;display:flex;flex-direction:column;gap:0.6rem;position:relative;z-index:1;}
+  .membership-badge{background:rgba(14,124,123,0.2);border:1px solid rgba(14,124,123,0.3);color:var(--teal-light);font-size:0.75rem;font-weight:600;padding:0.4rem 0.8rem;border-radius:4px;letter-spacing:0.04em;}
+  .about-text p{font-size:0.97rem;color:#374151;margin-bottom:1.2rem;line-height:1.85;}
+  .research-interests{margin-top:2rem;}
+  .interest-title{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--navy);margin-bottom:1rem;}
+  .tags{display:flex;flex-wrap:wrap;gap:0.5rem;}
+  .tag{background:rgba(14,124,123,0.08);border:1px solid rgba(14,124,123,0.2);color:var(--teal);font-size:0.78rem;font-weight:500;padding:0.35rem 0.85rem;border-radius:20px;letter-spacing:0.03em;}
+
+  footer{background:#07172a;border-top:1px solid rgba(255,255,255,0.06);padding:2rem 1.5rem;text-align:center;}
+  .footer-inner{max-width:1200px;margin:0 auto;}
+  .footer-name{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:0.4rem;}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);letter-spacing:0.05em;}
+
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;}.about-left{position:static;}}
+  @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}section{padding:5rem 1rem 3rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mahmudul <span>Bhuiyan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="award.html">Award</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="publications.html">Publications</a>
+    <a href="research.html">Research</a><a href="projects.html">Projects</a><a href="education.html">Education</a>
+    <a href="award.html">Award</a><a href="skills.html">Skills</a><a href="gallery.html">Skills</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <!-- <div class="section-tag">// About Me</div> 
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-left fade-in">
+        <div class="profile-card">
+          <div class="profile-avatar">MB</div>
+          <div class="profile-name">Mahmudul Bhuiyan</div>
+          <div class="profile-role">Graduate Research Assistant</div>
+          <div class="profile-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Dinajpur, Bangladesh
+          </div>
+          <div class="profile-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            mahmudulb.shihab@gmail.com
+          </div>
+          <div class="profile-detail">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            HSTU, Dept. of Chemistry
+          </div>
+          <div class="memberships">
+            <div class="membership-badge">🔬 American Chemical Society</div>
+            <div class="membership-badge">⚗️ Royal Society of Chemistry</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <p>Hello! I'm <strong>Mahmudul Bhuiyan</strong> from Bangladesh, currently a graduate student in the Department of Chemistry at Hajee Mohammad Danesh Science &amp; Technology University (HSTU), one of the country's leading science and technology institutions.</p>
+        <p>My undergraduate program is specially focused on <strong>Bio-organic and Bio-inorganic Chemistry</strong>, chemical spectroscopy (UV-Vis, IR, NMR and Mass spectroscopy), Nanochemistry, Solid-state Chemistry, Analytical Chemistry, Coordination Chemistry, Natural Product and Medicinal Chemistry, and Green Chemistry.</p>
+        <p>Presently, my primary research interest lies in <strong>Nanozyme sensing</strong>, point-of-use kit development, and sustainable food safety. I have been actively working as a Research Assistant for more than two years at Dr. Md. Atikul Islam's Research Lab, contributing to numerous research projects.</p>
+        <p>With a strong interest in organic and inorganic nanozyme and analytical chemistry, I plan to pursue a <strong>Ph.D.</strong> and contribute meaningfully to the academic and scientific community.</p>
+        <div class="research-interests">
+          <div class="interest-title">Research Interests</div>
+          <div class="tags">
+            <span class="tag">Nanozyme Sensing</span>
+            <span class="tag">ATR-FTIR Spectroscopy</span>
+            <span class="tag">Food Safety</span>
+            <span class="tag">Chemometrics</span>
+            <span class="tag">Food Adulteration Detection</span>
+            <span class="tag">Analytical Chemistry</span>
+            <span class="tag">Bio-organic Chemistry</span>
+            <span class="tag">Green Chemistry</span>
+            <span class="tag">Nanochemistry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
   <div class="footer-inner">
     <div class="footer-name">Mahmudul Bhuiyan</div>
     <div class="footer-copy">© 2025 Mahmudul Bhuiyan · HSTU, Dinajpur, Bangladesh</div>
   </div>
 </footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
+
+  
+
+  
 
 <script>
   const hamburger = document.getElementById('hamburger');
@@ -205,4 +523,4 @@
   hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
 </script>
 </body>
-</html>
+</html>-->
