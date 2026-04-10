@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mahmudul Bhuiyan | About</title>
+<title>Mahmudul Bhuiyan | Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
   :root { --navy:#0f2541;--teal:#0e7c7b;--teal-light:#14a3a2;--gold:#c9a84c;--cream:#f8f5ef;--white:#ffffff;--gray:#6b7280;--gray-light:#f1f0ec;--text:#1a1a2e;--border:#e2ddd4; }
@@ -24,6 +24,65 @@
   .mobile-menu a:last-child{border-bottom:none;}
   .mobile-menu a:hover{color:var(--gold);}
   .mobile-menu.open{display:flex;}
+
+    /* HERO */
+  #home {
+    padding-top: 64px; min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy) 0%, #163354 60%, #0e4a4a 100%);
+    display: flex; align-items: center; position: relative; overflow: hidden;
+  }
+  #home::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 50%, rgba(14,124,123,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.1) 0%, transparent 50%);
+  }
+  #home::after {
+    content: ''; position: absolute; top: 10%; right: 5%;
+    width: 300px; height: 300px; border: 1px solid rgba(255,255,255,0.05); border-radius: 50%;
+  }
+  .hero-inner {
+    max-width: 1200px; margin: 0 auto; padding: 4rem 1.5rem;
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  }
+  .hero-tag {
+    display: inline-block; background: rgba(201,168,76,0.2); border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 20px; margin-bottom: 1.2rem;
+  }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); color: var(--white); line-height: 1.15; margin-bottom: 0.8rem; }
+  .hero-name span { color: var(--teal-light); }
+  .hero-title { font-size: 1rem; color: rgba(255,255,255,0.65); font-weight: 300; margin-bottom: 1.8rem; letter-spacing: 0.02em; }
+  .hero-desc { font-size: 0.95rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 2rem; max-width: 480px; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--teal); color: var(--white); padding: 0.75rem 1.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.88rem; letter-spacing: 0.04em; transition: all 0.25s; border: 2px solid var(--teal); }
+  .btn-primary:hover { background: var(--teal-light); border-color: var(--teal-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(14,124,123,0.4); }
+  .btn-outline { background: transparent; color: var(--white); padding: 0.75rem 1.8rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.88rem; letter-spacing: 0.04em; transition: all 0.25s; border: 2px solid rgba(255,255,255,0.3); }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-socials { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; }
+  .social-link { display: flex; align-items: center; gap: 0.4rem; color: rgba(255,255,255,0.55); font-size: 0.78rem; font-weight: 500; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+  .social-link:hover { color: var(--gold); }
+  .social-link svg { width: 16px; height: 16px; }
+  .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.5rem; text-align: center; backdrop-filter: blur(4px); transition: transform 0.25s, border-color 0.25s; }
+  .stat-card:hover { transform: translateY(-4px); border-color: rgba(14,124,123,0.5); }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--teal-light); font-weight: 700; line-height: 1; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; text-transform: uppercase; }
+ 
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-inner > * { animation: fadeUp 0.7s ease both; }
+  .hero-inner > *:nth-child(2) { animation-delay: 0.15s; }
+ 
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+    .hero-desc { max-width: 100%; }
+    .hero-btns, .hero-socials { justify-content: center; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+  }
 
   section{padding:6rem 1.5rem 4rem;}
   .section-inner{max-width:1200px;margin:0 auto;}
@@ -91,7 +150,7 @@
     <a href="education.html">Education</a>
     <a href="award.html">Award</a>
     <a href="skills.html">Skills</a>
-    <li><a href="gallery.html">Gallery</a></li>
+    <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
@@ -101,8 +160,8 @@
     <div>
       <div class="hero-tag">Bangladesh</div>
       <h1 class="hero-name">Hi, I'm<br><span>Mahmudul Bhuiyan</span></h1>
-      <p class="hero-title">BSc in Chemistry · Graduate Student ·</p>
-      <p class="hero-desc">Analytical chemist specializing in food safety, ATR-FTIR spectroscopy, nanozyme sensing, and chemometric analysis at Hajee Mohammad Danesh Science &amp; Technology University, Dinajpur.</p>
+      <p class="hero-title">BSc in Chemistry · Graduate Research Student ·</p>
+      <p class="hero-desc">I'm an Analytical chemist specializing in food safety, ATR-FTIR spectroscopy, nanozyme sensing, and chemometric analysis at Hajee Mohammad Danesh Science &amp; Technology University, Dinajpur.</p>
       <div class="hero-btns">
         <a href="publications.html" class="btn-primary">View Publications</a>
         <a href="contact.html" class="btn-outline">Get in Touch</a>
@@ -139,7 +198,7 @@
 <section>
   <div class="section-inner">
     <div class="section-header fade-in">
-      <div class="section-tag">// About Me</div> 
+      <div class="section-tag">// Introduction </div> 
       <h2 class="section-title">About Me</h2>
       <div class="section-line"></div>
     </div>
@@ -171,7 +230,7 @@
         <p>Hello! I'm <strong>Mahmudul Bhuiyan</strong> from Bangladesh, currently a graduate student in the Department of Chemistry at Hajee Mohammad Danesh Science &amp; Technology University (HSTU), one of the country's leading science and technology institutions.</p>
         <p>My undergraduate program is specially focused on <strong>Bio-organic and Bio-inorganic Chemistry</strong>, chemical spectroscopy (UV-Vis, IR, NMR and Mass spectroscopy), Nanochemistry, Solid-state Chemistry, Analytical Chemistry, Coordination Chemistry, Natural Product and Medicinal Chemistry, and Green Chemistry.</p>
         <p>Presently, my primary research interest lies in <strong>Nanozyme sensing</strong>, point-of-use kit development, and sustainable food safety. I have been actively working as a Research Assistant for more than two years at Dr. Md. Atikul Islam's Research Lab, contributing to numerous research projects.</p>
-        <p>With a strong interest in organic and inorganic nanozyme and analytical chemistry, I plan to pursue a <strong>Ph.D.</strong> and contribute meaningfully to the academic and scientific community.</p>
+        <p>With a strong interest in organic and inorganic nanozyme and analytical chemistry, I aim to pursue a <strong>Ph.D.</strong> and contribute to impectful research in analytical and nanozyme chemistry.</p>
         <div class="research-interests">
           <div class="interest-title">Research Interests</div>
           <div class="tags">
