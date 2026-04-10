@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mahmudul Bhuiyan | Skills</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{--navy:#0f2541;--teal:#0e7c7b;--teal-light:#14a3a2;--gold:#c9a84c;--cream:#f8f5ef;--white:#ffffff;--gray:#6b7280;--text:#1a1a2e;--border:#e2ddd4;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);line-height:1.7;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,37,65,0.97);backdrop-filter:blur(10px);border-bottom:2px solid var(--teal);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;white-space:nowrap;}
+  .nav-logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:0.2rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.4rem 0.7rem;border-radius:4px;transition:all 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(201,168,76,0.1);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.4rem;background:none;border:none;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--navy);padding:1rem 1.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+  .mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem;text-transform:uppercase;padding:0.7rem 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a:hover{color:var(--gold);}
+  .mobile-menu.open{display:flex;}
+  section{padding:6rem 1.5rem 4rem;}
+  .section-inner{max-width:1200px;margin:0 auto;}
+  .section-header{text-align:center;margin-bottom:3.5rem;}
+  .section-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.8rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--navy);}
+  .section-line{width:60px;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));margin:1rem auto 0;border-radius:2px;}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;}
+  .skill-card{background:var(--cream);border:1px solid var(--border);border-radius:12px;padding:1.8rem;transition:transform 0.2s,border-color 0.2s;}
+  .skill-card:hover{transform:translateY(-4px);border-color:var(--teal);}
+  .skill-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--navy),#1a3a5c);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem;}
+  .skill-name{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);margin-bottom:0.3rem;}
+  .skill-tool{font-family:'DM Mono',monospace;font-size:0.75rem;color:var(--teal);margin-bottom:0.8rem;font-weight:500;}
+  .skill-desc{font-size:0.83rem;color:var(--gray);line-height:1.6;}
+  .skills-categories{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+  .skill-cat{background:var(--navy);border-radius:12px;padding:1.8rem;color:var(--white);}
+  .skill-cat-title{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal-light);margin-bottom:1rem;}
+  .skill-list{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+  .skill-list li{font-size:0.85rem;color:rgba(255,255,255,0.75);display:flex;align-items:center;gap:0.5rem;}
+  .skill-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal-light);flex-shrink:0;}
+  footer{background:#07172a;border-top:1px solid rgba(255,255,255,0.06);padding:2rem 1.5rem;text-align:center;}
+  .footer-inner{max-width:1200px;margin:0 auto;}
+  .footer-name{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:0.4rem;}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.skills-categories{grid-template-columns:1fr;}section{padding:5rem 1rem 3rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mahmudul <span>Bhuiyan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li><li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li><li><a href="education.html">Education</a></li>
+      <li><a href="award.html">Award</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="publications.html">Publications</a>
+    <a href="research.html">Research</a><a href="projects.html">Projects</a><a href="education.html">Education</a>
+    <a href="award.html">Award</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+<section>
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-tag">// Technical Expertise</div>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid fade-in">
+      <div class="skill-card"><div class="skill-icon">🔬</div><div class="skill-name">Pollen Analysis</div><div class="skill-tool">Leica DM500 Optical Microscope</div><div class="skill-desc">Melissopalynological analysis to identify floral sources and authenticate honey samples.</div></div>
+      <div class="skill-card"><div class="skill-icon">⚗️</div><div class="skill-name">HMF Analysis</div><div class="skill-tool">UHPLC-DAD</div><div class="skill-desc">Measurement of hydroxymethylfurfural (HMF) levels — a critical quality indicator in honey and food products.</div></div>
+      <div class="skill-card"><div class="skill-icon">🌈</div><div class="skill-name">Band Gap Calculation</div><div class="skill-tool">UV-Vis Spectroscopy</div><div class="skill-desc">Optical band gap determination for nanomaterial characterization and semiconductor analysis.</div></div>
+      <div class="skill-card"><div class="skill-icon">🗺️</div><div class="skill-name">Location Site Mapping</div><div class="skill-tool">ArcGIS Pro / QGIS</div><div class="skill-desc">GIS-based spatial mapping for sample collection sites and geographic data visualization.</div></div>
+    </div>
+    <div class="skills-categories fade-in">
+      <div class="skill-cat">
+        <div class="skill-cat-title">Analytical Instruments</div>
+        <ul class="skill-list"><li>ATR-FTIR Spectroscopy</li><li>UHPLC / HPLC</li><li>UV-Vis Spectrophotometry</li><li>Leica DM500 Microscopy</li></ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Software &amp; Programming</div>
+        <ul class="skill-list"><li>Origin Pro</li><li>Umetrics SIMCA</li><li>MATLAB</li><li>ArcGIS Pro / QGIS</li></ul>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title">Office &amp; Productivity</div>
+        <ul class="skill-list"><li>Microsoft Word / Google Docs</li><li>PowerPoint / Slides</li><li>Excel / Google Sheets</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Mahmudul Bhuiyan · Chemist &amp; Researcher</div>
+    <div class="footer-copy">© 2025 Mahmudul Bhuiyan · HSTU, Dinajpur, Bangladesh</div>
+  </div>
+</footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

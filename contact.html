@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mahmudul Bhuiyan | Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{--navy:#0f2541;--teal:#0e7c7b;--teal-light:#14a3a2;--gold:#c9a84c;--cream:#f8f5ef;--white:#ffffff;--gray:#6b7280;--text:#1a1a2e;--border:#e2ddd4;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.7;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,37,65,0.97);backdrop-filter:blur(10px);border-bottom:2px solid var(--teal);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;white-space:nowrap;}
+  .nav-logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:0.2rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.4rem 0.7rem;border-radius:4px;transition:all 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(201,168,76,0.1);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.4rem;background:none;border:none;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--navy);padding:1rem 1.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+  .mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem;text-transform:uppercase;padding:0.7rem 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a:hover{color:var(--gold);}
+  .mobile-menu.open{display:flex;}
+  section{padding:6rem 1.5rem 4rem;min-height:100vh;}
+  .section-inner{max-width:1200px;margin:0 auto;}
+  .section-header{text-align:center;margin-bottom:3.5rem;}
+  .section-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--teal-light);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.8rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--white);}
+  .section-line{width:60px;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));margin:1rem auto 0;border-radius:2px;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+  .contact-intro{font-size:1rem;color:rgba(255,255,255,0.7);line-height:1.8;margin-bottom:2rem;}
+  .contact-items{display:flex;flex-direction:column;gap:1rem;}
+  .contact-item{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+  .contact-item:hover{color:var(--teal-light);}
+  .contact-item-icon{width:42px;height:42px;background:rgba(14,124,123,0.2);border:1px solid rgba(14,124,123,0.3);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;transition:background 0.2s;}
+  .contact-item:hover .contact-item-icon{background:rgba(14,124,123,0.4);}
+  .connect-links{display:flex;flex-direction:column;gap:1rem;}
+  .connect-link{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem;transition:all 0.2s;}
+  .connect-link:hover{background:rgba(14,124,123,0.2);border-color:rgba(14,124,123,0.4);color:var(--white);transform:translateX(4px);}
+  .connect-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+  .connect-label{font-size:0.7rem;color:var(--teal-light);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;display:block;margin-bottom:0.1rem;}
+  footer{background:#07172a;border-top:1px solid rgba(255,255,255,0.06);padding:2rem 1.5rem;text-align:center;}
+  .footer-inner{max-width:1200px;margin:0 auto;}
+  .footer-name{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:0.4rem;}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:2.5rem;}}
+  @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}section{padding:5rem 1rem 3rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mahmudul <span>Bhuiyan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li><li><a href="research.html">Research</a></li>
+      <li><a href="projects.html">Projects</a></li><li><a href="education.html">Education</a></li>
+      <li><a href="award.html">Award</a></li><li><a href="skills.html">Skills</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="publications.html">Publications</a>
+    <a href="research.html">Research</a><a href="projects.html">Projects</a><a href="education.html">Education</a>
+    <a href="award.html">Award</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+<section>
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-tag">// Get In Touch</div>
+      <h2 class="section-title">Contact</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid fade-in">
+      <div>
+        <p class="contact-intro">I'm open to academic collaborations, research discussions, and Ph.D. opportunities. Feel free to reach out through any of the channels below!</p>
+        <div class="contact-items">
+          <a href="mailto:mahmudulb.shihab@gmail.com" class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            mahmudulb.shihab@gmail.com
+          </a>
+          <div class="contact-item">
+            <div class="contact-item-icon">🏛️</div>
+            Dept. of Chemistry, HSTU, Dinajpur-5200, Bangladesh
+          </div>
+        </div>
+      </div>
+      <div class="connect-links">
+        <a href="https://orcid.org/0009-0000-3065-2139" target="_blank" class="connect-link">
+          <div class="connect-icon" style="background:rgba(166,206,57,0.15);">🆔</div>
+          <div><span class="connect-label">ORCID</span>0009-0000-3065-2139</div>
+        </a>
+        <a href="https://scholar.google.com.tw/citations?hl=en&user=9gkU-hcAAAAJ" target="_blank" class="connect-link">
+          <div class="connect-icon" style="background:rgba(66,133,244,0.15);">🎓</div>
+          <div><span class="connect-label">Google Scholar</span>View Publications &amp; Citations</div>
+        </a>
+        <a href="https://www.linkedin.com/in/mahmudul-bhuiyan/" target="_blank" class="connect-link">
+          <div class="connect-icon" style="background:rgba(0,119,181,0.15);">💼</div>
+          <div><span class="connect-label">LinkedIn</span>linkedin.com/in/mahmudul-bhuiyan</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Mahmudul Bhuiyan · Chemist &amp; Researcher</div>
+    <div class="footer-copy">© 2025 Mahmudul Bhuiyan · HSTU, Dinajpur, Bangladesh</div>
+  </div>
+</footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

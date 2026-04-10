@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mahmudul Bhuiyan | Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{--navy:#0f2541;--teal:#0e7c7b;--teal-light:#14a3a2;--gold:#c9a84c;--cream:#f8f5ef;--white:#ffffff;--gray:#6b7280;--text:#1a1a2e;--border:#e2ddd4;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);line-height:1.7;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(15,37,65,0.97);backdrop-filter:blur(10px);border-bottom:2px solid var(--teal);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--white);text-decoration:none;white-space:nowrap;}
+  .nav-logo span{color:var(--gold);}
+  .nav-links{display:flex;gap:0.2rem;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.4rem 0.7rem;border-radius:4px;transition:all 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold);background:rgba(201,168,76,0.1);}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:0.4rem;background:none;border:none;}
+  .hamburger span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;}
+  .mobile-menu{display:none;flex-direction:column;background:var(--navy);padding:1rem 1.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+  .mobile-menu a{color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;padding:0.7rem 0;border-bottom:1px solid rgba(255,255,255,0.08);transition:color 0.2s;}
+  .mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu a:hover{color:var(--gold);}
+  .mobile-menu.open{display:flex;}
+
+  section{padding:6rem 1.5rem 4rem;}
+  .section-inner{max-width:1200px;margin:0 auto;}
+  .section-header{text-align:center;margin-bottom:3.5rem;}
+  .section-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--teal);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.8rem;}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);color:var(--navy);}
+  .section-line{width:60px;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));margin:1rem auto 0;border-radius:2px;}
+
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.8rem;}
+  .project-card{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform 0.25s,box-shadow 0.25s;}
+  .project-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(15,37,65,0.1);}
+  .project-header{background:linear-gradient(135deg,var(--navy),#163354);padding:1.5rem;position:relative;overflow:hidden;}
+  .project-header::after{content:'';position:absolute;bottom:-20px;right:-20px;width:80px;height:80px;background:rgba(14,124,123,0.3);border-radius:50%;}
+  .project-num{font-family:'DM Mono',monospace;font-size:0.7rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;margin-bottom:0.5rem;}
+  .project-name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--white);line-height:1.4;position:relative;z-index:1;}
+  .project-body{padding:1.5rem;}
+  .project-org{display:flex;align-items:center;gap:0.5rem;font-size:0.75rem;color:var(--teal);font-weight:600;margin-bottom:0.3rem;letter-spacing:0.04em;}
+  .project-grant{font-family:'DM Mono',monospace;font-size:0.72rem;color:var(--gray);margin-bottom:1rem;}
+  .project-points{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+  .project-points li{font-size:0.84rem;color:#4b5563;padding-left:1rem;position:relative;line-height:1.55;}
+  .project-points li::before{content:'•';position:absolute;left:0;color:var(--teal);font-weight:700;}
+
+  footer{background:#07172a;border-top:1px solid rgba(255,255,255,0.06);padding:2rem 1.5rem;text-align:center;}
+  .footer-inner{max-width:1200px;margin:0 auto;}
+  .footer-name{font-family:'Playfair Display',serif;font-size:1rem;color:rgba(255,255,255,0.5);margin-bottom:0.4rem;}
+  .footer-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);}
+
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.projects-grid{grid-template-columns:1fr;}section{padding:5rem 1rem 3rem;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Mahmudul <span>Bhuiyan</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li><li><a href="research.html">Research</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="education.html">Education</a></li><li><a href="award.html">Award</a></li>
+      <li><a href="skills.html">Skills</a></li><li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="publications.html">Publications</a>
+    <a href="research.html">Research</a><a href="projects.html">Projects</a><a href="education.html">Education</a>
+    <a href="award.html">Award</a><a href="skills.html">Skills</a><a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <div class="section-tag">// Funded Work</div>
+      <h2 class="section-title">Research Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card fade-in">
+        <div class="project-header"><div class="project-num">Project 01</div><div class="project-name">Detection &amp; Quantification of Milk Adulteration with Palm Oil Using ATR-FTIR &amp; Chemometric Models</div></div>
+        <div class="project-body">
+          <div class="project-org">🏛 Ministry of Science &amp; Technology, Bangladesh</div>
+          <div class="project-grant">Grant No: SRG-231200 · Role: Research Assistant</div>
+          <ul class="project-points">
+            <li>Prepared adulterated milk samples at varying concentrations under lab conditions</li>
+            <li>Acquired ATR-FTIR spectral data (4000–400 cm⁻¹) for pure and adulterated samples</li>
+            <li>Applied OPLS-DA (qualitative) and OPLS regression (quantitative) chemometric models</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header"><div class="project-num">Project 02</div><div class="project-name">Quality Assessment of Physicochemical Properties of Local, National &amp; International Branded Honey</div></div>
+        <div class="project-body">
+          <div class="project-org">🏛 Institute of Research &amp; Training, HSTU</div>
+          <div class="project-grant">Grant No: HSTU_IRT_24-25_86 · Role: Research Assistant</div>
+          <ul class="project-points">
+            <li>Analyzed moisture content, electrical conductivity, HMF, TP, TF, and antioxidant capacity</li>
+            <li>Performed melissopalynological (pollen) analysis and total soluble solids measurement</li>
+            <li>Applied PCA and HCA for clustering and Codex Alimentarius compliance comparison</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header"><div class="project-num">Project 03</div><div class="project-name">Seasonal Variation of Total Phenol, Flavonoid &amp; Antioxidant Capacity in Piper betle L. Leaves</div></div>
+        <div class="project-body">
+          <div class="project-org">🏛 Institute of Research &amp; Training, HSTU</div>
+          <div class="project-grant">Grant No: HSTU_IRT_22-23_91 · Role: Research Assistant</div>
+          <ul class="project-points">
+            <li>Analyzed total phenolic and total flavonoid content across different harvest seasons</li>
+            <li>Measured antioxidant activity of betel leaves from Bangladesh</li>
+            <li>Applied PCA and HCA for multivariate statistical clustering</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header"><div class="project-num">Project 04</div><div class="project-name">Rapid Detection of Adulterated Honey Using FTIR Spectroscopy with Chemometrics Tools</div></div>
+        <div class="project-body">
+          <div class="project-org">🏛 University Grants Commission, Bangladesh</div>
+          <div class="project-grant">Grant No: UGC_22-23_CS_18 · Role: Research Assistant</div>
+          <ul class="project-points">
+            <li>Prepared adulterated honey samples at various concentrations in lab conditions</li>
+            <li>Acquired ATR-FTIR spectra (4000–400 cm⁻¹) for pure and adulterated honey</li>
+            <li>Employed OPLS-DA and OPLS regression for high-accuracy detection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-header"><div class="project-num">Project 05</div><div class="project-name">Extraction, Production &amp; Quality Assessment of Betel Leaves Essential Oil from Bangladesh</div></div>
+        <div class="project-body">
+          <div class="project-org">🏛 Institute of Research &amp; Training, HSTU</div>
+          <div class="project-grant">Grant No: HSTU_IRT_23-24_93 · Role: Research Assistant</div>
+          <ul class="project-points">
+            <li>Extracted essential oil using steam and hydro-distillation processes</li>
+            <li>Assessed quality of extracted essential oil using FTIR spectroscopy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Mahmudul Bhuiyan · Chemist &amp; Researcher</div>
+    <div class="footer-copy">© 2025 Mahmudul Bhuiyan · HSTU, Dinajpur, Bangladesh</div>
+  </div>
+</footer>
+<script>
+  document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
